@@ -13,3 +13,6 @@ The latest presentation associated with this workshop is available [here](https:
 1. [Postman](https://www.postman.com/) available for Windows, Linux and Mac
 1. [HTTP methods](https://restfulapi.net/http-methods/)
 1. [URL encoding](https://www.w3schools.com/tags/ref_urlencode.ASP)
+1. [Restul Booker](https://automationintesting.online)
+1. [Restful Booker source](https://github.com/mwinteringham/restful-booker-platform)
+1. [Restful Booker Swagger Specification](https://automationintesting.online/report/swagger-ui.html)
