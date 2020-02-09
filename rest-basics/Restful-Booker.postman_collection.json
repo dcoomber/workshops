@@ -58,7 +58,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/booking?checkin=2020-01-01&checkout=2020-12-31",
+							"raw": "{{baseUrl}}/booking?firstname=tab",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -68,9 +68,8 @@
 							"query": [
 								{
 									"key": "firstname",
-									"value": "Oren",
-									"description": "Return bookings with a specific firstname",
-									"disabled": true
+									"value": "tab",
+									"description": "Return bookings with a specific firstname"
 								},
 								{
 									"key": "lastname",
@@ -81,12 +80,14 @@
 								{
 									"key": "checkin",
 									"value": "2020-01-01",
-									"description": "Return bookings that have a checkin date greater than or equal to the set checkin date. Format must be CCYY-MM-DD"
+									"description": "Return bookings that have a checkin date greater than or equal to the set checkin date. Format must be CCYY-MM-DD",
+									"disabled": true
 								},
 								{
 									"key": "checkout",
 									"value": "2020-12-31",
-									"description": "Return bookings that have a checkout date less than or equal to the set checkout date. Format must be CCYY-MM-DD"
+									"description": "Return bookings that have a checkout date less than or equal to the set checkout date. Format must be CCYY-MM-DD",
+									"disabled": true
 								}
 							]
 						},
@@ -125,7 +126,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "1",
+									"value": "4",
 									"description": "The id of the booking you would like to retrieve"
 								}
 							]
@@ -155,7 +156,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"firstname\" : \"David\",\n\t\"lastname\" : \"Coomber\",\n\t\"totalprice\" : 111,\n\t\"depositpaid\" : true,\n\t\"bookingdates\" : {\n\t    \"checkin\" : \"2020-03-01\",\n        \"checkout\" : \"2020-03-10\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}",
+							"raw": "{\n\t\"bookingdates\":\n\t{\n\t\t\"checkin\":\"2020-03-01\",\n\t\t\"checkout\":\"2020-03-14\"\n\t},\n\t\"depositpaid\":false,\n\t\"firstname\":\"Tab\",\n\t\"lastname\":\"Tab\",\n\t\"roomid\":1,\n\t\"email\":\"test@test.com\",\n\t\"phone\":\"12345678901\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -163,12 +164,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/booking",
+							"raw": "{{baseUrl}}/booking/",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"booking"
+								"booking",
+								""
 							]
 						},
 						"description": "Creates a new booking in the API."
@@ -181,11 +183,11 @@
 						"method": "PUT",
 						"header": [
 							{
-								"description": "Sets the format of payload you are sending. Can be application/json or text/xml\n\nDefault value: application/json",
 								"key": "Content-Type",
 								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
+								"value": "application/json",
+								"description": "Sets the format of payload you are sending. Can be application/json or text/xml\n\nDefault value: application/json",
+								"type": "text"
 							},
 							{
 								"description": "Sets what format the response body is returned in. Can be application/json or application/xml\n\nDefault value: application/json",
@@ -195,14 +197,21 @@
 							},
 							{
 								"key": "Cookie",
-								"value": "Cookie: token={{authToken}}",
-								"description": "Sets an authorisation token to access the PUT endpoint, can be used as an alternative to the Authorisation\n\nDefault value: token=",
+								"value": "token={{authToken}}",
+								"description": "Sets an authorisation token to access the PUT endpoint, can be used as an alternative to the Authorisation",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorisation",
+								"value": "Basic {{authKey}}",
+								"description": "Basic authorisation header to access the PUT endpoint, can be used as an alternative to the Cookie header",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstname\" : \"James\",\n    \"lastname\" : \"Brown\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2018-01-01\",\n        \"checkout\" : \"2019-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}",
+							"raw": "{\n    \"bookingid\": 4,\n    \"roomid\": 1,\n    \"firstname\": \"Tab\",\n    \"lastname\": \"Tab\",\n    \"depositpaid\": false,\n    \"bookingdates\": {\n        \"checkin\": \"2020-02-01\",\n        \"checkout\": \"2020-02-08\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -221,11 +230,121 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "2"
+									"value": "1"
 								}
 							]
 						},
 						"description": "Updates a current booking."
+					},
+					"response": []
+				},
+				{
+					"name": "Partial Update Booking",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"description": "Sets the format of payload you are sending. Can be application/json or text/xml\n\nDefault value: application/json",
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"description": "Sets what format the response body is returned in. Can be application/json or application/xml\n\nDefault value: application/json",
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"description": "Sets an authorisation token to access the PUT endpoint, can be used as an alternative to the Authorisation",
+								"key": "Cookie",
+								"type": "text",
+								"value": "token={{authToken}}",
+								"disabled": true
+							},
+							{
+								"description": "Basic authorisation header to access the PUT endpoint, can be used as an alternative to the Cookie header",
+								"key": "Authorisation",
+								"type": "text",
+								"value": "Basic {{authKey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roomid\": 1,\n    \"firstname\": \"Tab\",\n    \"lastname\": \"Tab\",\n    \"depositpaid\": false,\n    \"bookingdates\": {\n        \"checkin\": \"2020-02-01\",\n        \"checkout\": \"2020-02-08\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/booking/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"booking",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Updates a current booking with a partial payload."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Booking",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": "Sets what format the response body is returned in. Can be application/json or application/xml\n\nDefault value: application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorisation",
+								"value": "Basic {{authKey}}",
+								"description": "Basic authorisation header to access the DELETE endpoint, can be used as an alternative to the Cookie header",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "token={{authToken}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{baseUrl}}/booking/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"booking",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4",
+									"description": "The id of the booking you would like to retrieve"
+								}
+							]
+						},
+						"description": "Returns a specific booking based upon the booking id provided."
 					},
 					"response": []
 				}
@@ -257,9 +376,15 @@
 	],
 	"variable": [
 		{
-			"id": "2971b675-61c3-4fdf-9406-dbd61ca89535",
+			"id": "d3981a0f-4bd7-4c00-a901-038e4d756e80",
 			"key": "authToken",
-			"value": "8101b3a24e0d29d",
+			"value": "1bede359bbf9b96",
+			"type": "string"
+		},
+		{
+			"id": "24c7d6d3-8714-442f-a8a9-c702eca9bbc5",
+			"key": "authKey",
+			"value": "YWRtaW46cGFzc3dvcmQxMjM=",
 			"type": "string"
 		}
 	],
