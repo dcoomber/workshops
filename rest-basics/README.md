@@ -1,6 +1,6 @@
 # TeSTing ReST
 
-An introduction to what ReST (Representational State Transfer), how to see what ReST requests a webpage initiates using developer tools and how to manipulate a ReST API using Postman.
+An introduction to what ReST (Representational State Transfer) is, how to *spy* on what a webpage is doing using developer tools and how to interact with a ReST API using Postman.
 
 The latest presentation associated with this workshop is available [here](https://docs.google.com/presentation/d/1uLLQ_inO93b9y4fRBytFBaI2uUz4GyGF9bT4WkjVtqc/edit?usp=sharing).
 
