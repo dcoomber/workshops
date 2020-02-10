@@ -70,7 +70,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/booking?firstname=Sally",
+							"raw": "{{baseUrl}}/booking?checkout=2020-01-31",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -81,7 +81,8 @@
 								{
 									"key": "firstname",
 									"value": "Sally",
-									"description": "Return bookings with a specific firstname"
+									"description": "Return bookings with a specific firstname",
+									"disabled": true
 								},
 								{
 									"key": "lastname",
@@ -97,9 +98,8 @@
 								},
 								{
 									"key": "checkout",
-									"value": "2020-12-31",
-									"description": "Return bookings that have a checkout date less than or equal to the set checkout date. Format must be CCYY-MM-DD",
-									"disabled": true
+									"value": "2020-01-31",
+									"description": "Return bookings that have a checkout date less than or equal to the set checkout date. Format must be CCYY-MM-DD"
 								}
 							]
 						},
@@ -243,7 +243,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "31"
 								}
 							]
 						},
@@ -390,6 +390,82 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Get All Room Reports",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Sets what format the response body is returned in. Can be application/json or application/xml\n\nDefault value: application/json",
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{baseUrl}}/report/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"report",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Room Reports",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Sets what format the response body is returned in. Can be application/json or application/xml\n\nDefault value: application/json",
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{baseUrl}}/room/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"room",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [
@@ -416,15 +492,15 @@
 	],
 	"variable": [
 		{
-			"id": "92b911e4-d482-492e-8815-9ac0004e37f6",
+			"id": "161e90aa-bd38-4f57-bf16-2bf069079260",
 			"key": "authToken",
-			"value": "41b21696f06885a",
+			"value": "82f27fba14be7f0",
 			"type": "string"
 		},
 		{
-			"id": "15917db9-8a26-4fb5-99f8-80c12ed0f1dc",
+			"id": "0ea7eaac-d2ef-4131-a741-e5bd28fb0ed9",
 			"key": "authKey",
-			"value": "YWRtaW46cGFzc3dvcmQxMjM=",
+			"value": "YWRtaW46cGFzc3dvcmQxMjM=]",
 			"type": "string"
 		}
 	],
