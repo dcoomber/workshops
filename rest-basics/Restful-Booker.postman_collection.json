@@ -492,13 +492,13 @@
 	],
 	"variable": [
 		{
-			"id": "161e90aa-bd38-4f57-bf16-2bf069079260",
+			"id": "7d83deeb-7305-4437-9992-99c6f4ab2065",
 			"key": "authToken",
 			"value": "82f27fba14be7f0",
 			"type": "string"
 		},
 		{
-			"id": "0ea7eaac-d2ef-4131-a741-e5bd28fb0ed9",
+			"id": "f35a55f6-a3cc-443a-9f48-978b10c7dc23",
 			"key": "authKey",
 			"value": "YWRtaW46cGFzc3dvcmQxMjM=]",
 			"type": "string"
