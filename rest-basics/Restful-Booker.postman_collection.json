@@ -21,6 +21,18 @@
 								],
 								"type": "text/javascript"
 							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "80d8380f-c20e-45bc-b1f7-94be105e06fd",
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"",
+									"pm.collectionVariables.set(\"authToken\", data.token);"
+								],
+								"type": "text/javascript"
+							}
 						}
 					],
 					"request": {
@@ -35,12 +47,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\": \"admin\",\n\t\"password\": \"password123\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\n\t\"username\": \"admin\",\n\t\"password\": \"password123\"\n}"
 						},
 						"url": {
 							"raw": "https://restful-booker.herokuapp.com/auth",
@@ -139,6 +146,7 @@
 								{
 									"key": "id",
 									"value": "1",
+									"type": "string",
 									"description": "The id of the booking you would like to retrieve"
 								}
 							]
@@ -169,12 +177,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstname\" : \"Jim\",\n    \"lastname\" : \"Brown\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2020-01-01\",\n        \"checkout\" : \"2021-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\n    \"firstname\" : \"Jim\",\n    \"lastname\" : \"Brown\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2020-01-01\",\n        \"checkout\" : \"2021-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
 						},
 						"url": {
 							"raw": "{{baseUrl}}/booking",
@@ -224,12 +227,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstname\" : \"James\",\n    \"lastname\" : \"Brown\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2018-01-01\",\n        \"checkout\" : \"2019-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\n    \"firstname\" : \"James\",\n    \"lastname\" : \"Brown\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2018-01-01\",\n        \"checkout\" : \"2019-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
 						},
 						"url": {
 							"raw": "{{baseUrl}}/booking/:id",
@@ -243,7 +241,8 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "31"
+									"value": "31",
+									"type": "string"
 								}
 							]
 						},
@@ -285,12 +284,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"roomid\": 1,\n    \"firstname\": \"Tab\",\n    \"lastname\": \"Tab\",\n    \"depositpaid\": false,\n    \"bookingdates\": {\n        \"checkin\": \"2020-02-01\",\n        \"checkout\": \"2020-02-08\"\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\n    \"roomid\": 1,\n    \"firstname\": \"Tab\",\n    \"lastname\": \"Tab\",\n    \"depositpaid\": false,\n    \"bookingdates\": {\n        \"checkin\": \"2020-02-01\",\n        \"checkout\": \"2020-02-08\"\n    }\n}"
 						},
 						"url": {
 							"raw": "{{baseUrl}}/booking/:id",
@@ -304,7 +298,8 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "1",
+									"type": "string"
 								}
 							]
 						},
@@ -356,6 +351,7 @@
 								{
 									"key": "id",
 									"value": "2",
+									"type": "string",
 									"description": "The id of the booking you would like to retrieve"
 								}
 							]
@@ -457,7 +453,8 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "1"
+									"value": "1",
+									"type": "string"
 								}
 							]
 						}
@@ -492,13 +489,13 @@
 	],
 	"variable": [
 		{
-			"id": "7d83deeb-7305-4437-9992-99c6f4ab2065",
+			"id": "654b2aa6-b8e2-4d66-915d-c7b13195772a",
 			"key": "authToken",
-			"value": "82f27fba14be7f0",
+			"value": "ed290d0e87a9974",
 			"type": "string"
 		},
 		{
-			"id": "f35a55f6-a3cc-443a-9f48-978b10c7dc23",
+			"id": "725c6af8-01d0-44c2-9e3a-4a5e20ab1181",
 			"key": "authKey",
 			"value": "YWRtaW46cGFzc3dvcmQxMjM=]",
 			"type": "string"
