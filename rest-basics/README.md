@@ -21,7 +21,7 @@ An introduction to what ReST (Representational State Transfer) is, how to *spy* 
 1. Open your browser *Developer Tools* (usually by pressing *F12*)
    1. Create a few bookings with valid / invalid data
    1. Do you see anything interesting in the requests being sent by the web application using *Developer Tools*
-1. Read through the [Restful Booker API documentation](https://restful-booker.herokuapp.com/apidoc/index.html) or as a [PDF version](restful-booker/README.md) (extracted on 17 February 2020)
+1. Read through the [Restful Booker API documentation](https://restful-booker.herokuapp.com/apidoc/index.html) or as a [PDF version](restful-booker/restful-booker-platform-api-documentation.pdf) (extracted on 17 February 2020)
 1. What can't you do through the Web UI?
 1. Explore the Postman environment setup
    1. Environment level variables assist in exploring multiple environments
