@@ -11,8 +11,8 @@ An introduction to what ReST (Representational State Transfer) is, how to *spy* 
 1. Download and install [Postman](https://www.postman.com/).  Its available for Windows, Linux and Mac.
 1. Open Postman and create a new workspace (or use an existing one).
 1. Import the Postman environments for the Restful Booker Platform
-   1. The [Production](postman/production.postman_environment.json) environment references the Web UI version at https://automationintesting.online
-   1. The [Heroku](postman/heroku.postman_environment.json) environment references the platform version at https://restful-booker.herokuapp.com
+   1. The [Production](postman/production.postman_environment.json) environment references the Web UI version at [https://automationintesting.online](https://automationintesting.online)
+   1. The [Heroku](postman/heroku.postman_environment.json) environment references the platform version at [https://restful-booker.herokuapp.com](https://restful-booker.herokuapp.com)
 1. Import the [Postman collection](postman/restful-booker.postman_collection.json) for the Automation In Testing Restful Booker platform.
 
 ## Workshop
