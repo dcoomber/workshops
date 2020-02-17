@@ -11,8 +11,8 @@ An introduction to what ReST (Representational State Transfer) is, how to *spy* 
 1. Download and install [Postman](https://www.postman.com/).  Its available for Windows, Linux and Mac.
 1. Open Postman and create a new workspace (or use an existing one).
 1. Import the Postman environments for the Restful Booker Platform
-   1. The [Production](postman/production.postman_environment.json) environment references the Web UI version at https://automationintesting.online
-   1. The [Heroku](postman/heroku.postman_environment.json) environment references the platform version at https://restful-booker.herokuapp.com
+   1. The [Production](postman/production.postman_environment.json) environment references the Web UI version at [https://automationintesting.online](https://automationintesting.online)
+   1. The [Heroku](postman/heroku.postman_environment.json) environment references the platform version at [https://restful-booker.herokuapp.com](https://restful-booker.herokuapp.com)
 1. Import the [Postman collection](postman/restful-booker.postman_collection.json) for the Automation In Testing Restful Booker platform.
 
 ## Workshop
@@ -21,7 +21,7 @@ An introduction to what ReST (Representational State Transfer) is, how to *spy* 
 1. Open your browser *Developer Tools* (usually by pressing *F12*)
    1. Create a few bookings with valid / invalid data
    1. Do you see anything interesting in the requests being sent by the web application using *Developer Tools*
-1. Read through the [Restful Booker API documentation](https://restful-booker.herokuapp.com/apidoc/index.html) or as a [PDF version](restful-booker/README.md) (extracted on 17 February 2020)
+1. Read through the [Restful Booker API documentation](https://restful-booker.herokuapp.com/apidoc/index.html) or as a [PDF version](restful-booker/restful-booker-platform-api-documentation.pdf) (extracted on 17 February 2020)
 1. What can't you do through the Web UI?
 1. Explore the Postman environment setup
    1. Environment level variables assist in exploring multiple environments
