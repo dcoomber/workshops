@@ -4,7 +4,7 @@ An introduction to what ReST (Representational State Transfer) is, how to *spy* 
 
 ## Presented at
 
-1. Cape Town Testing on 20 February 2020.  See introduction slides [here](https://docs.google.com/presentation/d/1bQZlTnRyRi_cAuBmjn5QC97GYLN7lNqZ24Ee17G3TVk/edit?usp=sharing).
+1. Cape Town Testing on 20 February 2020.  See introduction slides [here](https://docs.google.com/presentation/d/1rm6JOM9raAK0IwLxpDb6CVC2qc-cZ1KVfBKq1GT6ZhU/edit?usp=sharing).
 
 ## Pre-requisites
 
